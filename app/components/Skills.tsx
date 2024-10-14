@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
     <ul className="flex flex-wrap justify-center gap-2.5 pt-5 md:gap-5 md:pt-7.5">
       {skills.map((skill, index) => (
         <li key={index} className="w-[calc((100%-40px)/2)] mb-5 md:w-[calc((100%-60px)/3)] flex flex-col items-center animate-zoom-rotate">
-          <Image src={skill.img} alt={skill.alt} width={40} height={40} className="w-10 h-10 mb-2" />
+          <Image src={`/assets/logo/${skill.img}`} alt={skill.alt} width={40} height={40} className="w-10 h-10 mb-2" />
           <span>{skill.name}</span>
         </li>
       ))}

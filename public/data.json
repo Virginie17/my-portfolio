@@ -23,73 +23,87 @@
         
         {
             "name": "SASS",
-            "img": "/assets/logo/sass.webp",
+            "img": "sass.svg",
             "alt": "Logo Saas",
             "category": "Front"
         },
         {
             "name": "JavaScript",
-            "img": "/assets/logo/js.webp",
+            "img": "javascript.svg",
             "alt": "Logo JavaScript",
             "category": "Front"
         },
         {
             "name": "React",
-            "img": "/assets/logo/react.webp",
+            "img": "react.svg",
             "alt": "Logo React",
             "category": "Front"
         },
         {
             "name": "Redux",
-            "img": "/assets/logo/redux.webp",
+            "img": "redux.svg",
             "alt": "Logo Redux",
             "category": "Front"
         },
         {
-            "name": "Vite",
-            "img": "/assets/logo/vite.webp",
+            "name": "HTML",
+            "img": "html.svg",
             "alt": "Logo vite",
             "category": "Front"
         },
         {
+            "name": "CSS",
+            "img": "css.svg",
+            "alt": "Logo CSS",
+            "category": "Front"
+        },
+
+        {
             "name": "Typescript",
-            "img": "/assets/logo/typescript.webp",
+            "img": "typescript.svg",
             "alt": "Logo typescript",
             "category": "Front"
         },
         {
             "name": "Tailwindcss",
-            "img": "/assets/logo/tailwindcss.webp",
+            "img": "tailwind.svg",
             "alt": "Logo tailwindcss",
             "category": "Front"
         },
         {
             "name": "Next.js",
-            "img": "/assets/logo/nextjs.webp",
+            "img": "next.svg",
             "alt": "Logo nextjs",
             "category": "Front"
         },
         {
             "name": "Node.js",
-            "img": "/assets/logo/nodejs.webp",
+            "img": "node.svg",
             "alt": "Logo nodejs",
             "category": "Autres"
         },
         {
             "name": "MongoDB",
-            "img": "/assets/logo/mongodb.webp",
+            "img": "mongodb.svg",
             "alt": "Logo mongodb",
             "category": "Autres"
         },
         {
+            "name": "Swagger",
+            "img": "swagger.svg",
+            "alt": "Logo Swagger",
+            "category": "Autres"
+
+        },
+        {
             "name": "Github",
-            "img": "/assets/logo/github.webp",
+            "img": "github.svg",
             "alt": "Logo Github",
             "category": "Autres"
         },
         {
             "name": "Figma",
-            "img": "/assets/logo/figma.webp",
+            "img": "figma.svg",
             "alt": "Logo Figma",
             "category": "Autres"
         },
@@ -181,7 +195,7 @@
         {
             "id": 6,
             "name": "ArgentBank",
-            "texte": "Dans ce projet, j'ai travaillé sur le développement front-end d’une application bancaire en utilisant React et Redux pour créer une expérience utilisateur dynamique et réactive. Ma mission principale était d'intégrer le front-end avec le back-end via des appels API. J'ai également écrit des appels à l'API REST pour connecter les deux parties de l'application, assurant une communication fluide entre le client et le serveur.",
+            "texte": "Dans ce projet, j'ai travaillé sur le développement front-end d’une application bancaire en utilisant React et Redux pour créer une expérience utilisateur dynamique et réactive. Ma mission principale était d'intégrer le front-end avec le back-end via des appels API.J'ai également écrit des appels à l'API REST pour connecter les deux parties de l'application, assurant une communication fluide entre le client et le serveur",
             "title": "Objectifs pédagogiques:",
             "objectif1": "Configurer des routes API pour la communication client / serveur",
             "objectif2": "Implémenter la gestion des données avec Redux pour assurer le fonctionnement du front",
@@ -190,7 +204,7 @@
             "alt": "image du site ArgentBank",
             "url": "https://github.com/Virginie17/argentbank.git",
             "github": "https://github.com/Virginie17/argentbank.git",
-            "category": "HTML| CSS | REACT REDUX | TYPESCRIPT"
+            "category": "REACT REDUX | TYPESCRIPT"
         }
     ]
 }
