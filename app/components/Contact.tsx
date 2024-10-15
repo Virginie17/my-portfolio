@@ -1,41 +1,52 @@
+// app/components/Contact.tsx
 "use client"
 
 import Image from 'next/image'; 
 import logo from '../../public/assets/img/logo.webp'; 
-import { useState } from 'react'; // Importer useState
-import emailjs from 'emailjs-com'; // Importer EmailJS
+import { useState } from 'react'; 
 
 export default function Contact() {
-    // État pour les champs du formulaire
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false); // État pour le chargement
+    const [error, setError] = useState(''); // État pour les erreurs
 
-    // Fonction pour gérer l'envoi du formulaire
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault(); // Empêche le rechargement de la page
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true); // Démarrer le chargement
+        setError(''); // Réinitialiser l'erreur
 
-        // Créez un objet avec les données du formulaire
         const formData = {
             name,
             email,
             message,
         };
 
-        // Utilisez EmailJS pour envoyer l'email
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
-            .then((response) => {
-                console.log('Message envoyé avec succès!', response.status, response.text);
-                // Réinitialiser le formulaire
+        try {
+            const response = await fetch('http://localhost:3000/api/sendEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                console.log('Email envoyé avec succès!');
                 setName('');
                 setEmail('');
                 setMessage('');
                 alert('Message envoyé avec succès !');
-            })
-            .catch((error) => {
-                console.error('Erreur lors de l\'envoi du message:', error);
-                alert('Erreur lors de l\'envoi du message.');
-            });
+            } else {
+                throw new Error('Erreur lors de l\'envoi de l\'email.');
+            }
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi de l\'email:', error);
+            setError('Erreur lors de l\'envoi de l\'email.');
+        } finally {
+            setLoading(false); // Arrêter le chargement
+        }
     };
 
     return (
@@ -46,7 +57,7 @@ export default function Contact() {
           </div>
           <div className="flex-grow">
             <h2 className="text-4xl font-bold mb-12 text-center text-white">Contactez-moi</h2>
-            <form className="max-w-lg mx-auto" onSubmit={handleSubmit}> {/* Ajout de onSubmit */}
+            <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block mb-2">Nom</label>
                 <input 
@@ -55,7 +66,7 @@ export default function Contact() {
                   name="name" 
                   className="w-full p-2 rounded bg-gray-700" 
                   value={name} 
-                  onChange={(e) => setName(e.target.value)} // Mise à jour de l'état
+                  onChange={(e) => setName(e.target.value)} 
                   required 
                 />
               </div>
@@ -67,7 +78,7 @@ export default function Contact() {
                   name="email" 
                   className="w-full p-2 rounded bg-gray-700" 
                   value={email} 
-                  onChange={(e) => setEmail(e.target.value)} // Mise à jour de l'état
+                  onChange={(e) => setEmail(e.target.value)} 
                   required 
                 />
               </div>
@@ -79,15 +90,17 @@ export default function Contact() {
                   rows={4} 
                   className="w-full p-2 rounded bg-gray-700" 
                   value={message} 
-                  onChange={(e) => setMessage(e.target.value)} // Mise à jour de l'état
+                  onChange={(e) => setMessage(e.target.value)} 
                   required
                 ></textarea>
               </div>
+              {error && <p className="text-red-500">{error}</p>} {/* Afficher l'erreur */}
               <button 
                 type="submit" 
-                className="bg-orange-300 hover:bg-orange-400 text-gray-900 font-bold px-6 py-2 rounded-full transition duration-300 mb-8"
+                className={`bg-orange-300 hover:bg-orange-400 text-gray-900 font-bold px-6 py-2 rounded-full transition duration-300 mb-8 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                disabled={loading} // Désactiver le bouton pendant le chargement
               >
-                Envoyer
+                {loading ? 'Envoi...' : 'Envoyer'}
               </button>
             </form>
           </div>

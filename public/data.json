@@ -109,13 +109,13 @@
         },
         {
             "name": "Méthode Agile",
-            "img": "/assets/logo/agile.webp",
+            "img": "agile.webp",
             "alt": "Logo agile",
             "category": "Autres"
         },
         {
             "name": "SEO",
-            "img": "/assets/logo/seo.webp",
+            "img": "seo.webp",
             "alt": "Logo SEO",
             "category": "Autres"
         }
@@ -162,7 +162,7 @@
             "width": "500",
             "height": "300",
             "alt": "image du site Kasa, application de logement",
-            "url": "https://virginie17.github.io/kasa/",
+            "url": "https://kasa-eight-sand.vercel.app/",
             "github": "https://github.com/Virginie17/kasa.git",
             "category": "HTML | CSS | REACT"
           },
@@ -188,7 +188,7 @@
             "objectif3": "Comprendre les différents tests : tests fonctionnels, tests d'intégration, test unitaire",
             "image": "/assets/projets/724.webp",
             "alt": "image du site 724 event, site d'évènement",
-            "url": "https://github.com/Virginie17/724events.git",
+            "url": "https://724events-henna.vercel.app/",
             "github": "https://github.com/Virginie17/724events.git",
             "category": "Tests"
         },
@@ -202,7 +202,7 @@
             "objectif3": "Afficher les données du back end sur l'interface via des appels API",
             "image": "/assets/projets/argentbank.webp",
             "alt": "image du site ArgentBank",
-            "url": "https://github.com/Virginie17/argentbank.git",
+            "url": "https://argentbank-rho.vercel.app/",
             "github": "https://github.com/Virginie17/argentbank.git",
             "category": "REACT REDUX | TYPESCRIPT"
         }
