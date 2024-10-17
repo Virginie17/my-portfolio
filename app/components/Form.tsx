@@ -1,32 +1,42 @@
 import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 const Form: React.FC = () => {
   const contactForm = useRef<HTMLFormElement>(null);
   const [isSent, setIsSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (contactForm.current) {
-      const { user_name, user_email, message } = contactForm.current;
+      const formData = new FormData(contactForm.current);
+      const name = formData.get('user_name') as string;
+      const email = formData.get('user_email') as string;
+      const message = formData.get('message') as string;
 
-      if (user_name.value && user_email.value && message.value) {
-        emailjs
-          .sendForm('service_4am808m', 'template_fo948bf', contactForm.current, 'JLlZHdARt2Uvm4PdA')
-          .then(
-            () => {
-              console.log('SUCCESS!');
-              setIsSent(true);
-              setTimeout(() => {
-                setIsSent(false);
-                contactForm.current?.reset();
-              }, 3000);
+      if (name && email && message) {
+        try {
+          const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
             },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
+            body: JSON.stringify({ name, email, message }),
+          });
+
+          if (response.ok) {
+            console.log('SUCCESS!');
+            setIsSent(true);
+            setTimeout(() => {
+              setIsSent(false);
+              contactForm.current?.reset();
+            }, 3000);
+          } else {
+            const data = await response.json();
+            console.log('FAILED...', data.error);
+          }
+        } catch (error) {
+          console.log('FAILED...', error);
+        }
       } else {
         alert("Veuillez remplir tous les champs du formulaire avant d'envoyer.");
       }

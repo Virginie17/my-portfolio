@@ -11,7 +11,7 @@ export default function About() {
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center text-white">À propos de moi</h2>
           <p className="text-base">
-            Je suis un développeuse Front-End passionnée par la création d interfaces utilisateur 
+            Je suis une développeuse Front-End passionnée par la création d interfaces utilisateur 
             intuitives et esthétiques. J aime travailler sur des projets qui me permettent 
             de créer des applications web performantes et responsives.
             Ce qui me distingue,c est ma capacité à allier créativité et technique. Je ne me contente pas de coder ; je m efforce de comprendre les besoins de mes utilisateurs pour concevoir des expériences qui ne sont pas seulement fonctionnelles, mais aussi agréables à utiliser. Chaque projet est pour moi une opportunité d apprendre et d innover, et je suis toujours à la recherche de nouvelles façons d améliorer mes compétences et d explorer les dernières tendances du développement web.
