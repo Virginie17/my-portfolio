@@ -1,11 +1,10 @@
 "use client"
 
 import Modal from "../components/Modal";
-import { useState } from "react"; // Importation de useState
+import { useState } from "react"; 
 
 export default function About() {
-    const [open, setOpen] = useState(false); // État pour gérer l'ouverture de la modal
-
+    const [open, setOpen] = useState(false); 
     return (
       <section id="about" className="py-20">
         <div className="container mx-auto">
@@ -25,8 +24,8 @@ Si vous recherchez une développeuse qui allie passion, expertise technique et s
             className="bg-orange-300 hover:bg-orange-400 text-gray-900 font-bold px-6 py-2 rounded-full transition duration-300 mt-4"
           >
             En savoir plus
-          </button> {/* Bouton pour ouvrir la modal */}
-          <Modal open={open} onOpenChange={setOpen} /> {/* Passer l'état à la modal */}
+          </button> 
+          <Modal open={open} onOpenChange={setOpen} />
         </div>
       </section>
     );

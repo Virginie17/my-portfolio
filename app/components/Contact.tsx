@@ -1,48 +1,62 @@
 "use client";
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import logo from '../../public/assets/img/logo.webp';
 
 export default function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement | null>(null);
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     setSuccess(false);
-
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
+        if (
+            nameRef.current &&
+            emailRef.current &&
+            messageRef.current
+        ) {
+            const contactData = {
+                name: nameRef.current.value,
+                email: emailRef.current.value,
+                message: messageRef.current.value,
+            };
 
-      const data = await response.json();
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(contactData),
+            });
 
-      if (response.ok) {
-        setSuccess(true);
-        setName('');
-        setEmail('');
-        setMessage('');
-      } else {
-        throw new Error(data.error || 'Erreur lors de l\'envoi de l\'email.');
-      }
+            if (response.ok) {
+                setSuccess(true);
+                nameRef.current.value = "";
+                emailRef.current.value = "";
+                messageRef.current.value = "";
+            } else {
+                const errorData = await response.json();
+                console.error("Une erreur est survenue : ", errorData.message || response.statusText);
+                setError(`Erreur: ${errorData.message || response.statusText}`);
+            }
+        }
     } catch (error) {
-      setError(`Erreur: ${(error as Error).message}`);
+        setError(`Erreur: ${(error as Error).message}`);
+        console.error("Erreur pendant l'envoi : ", error);
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+};
+
+
 
   return (
     <section id="contact" className="py-20 bg-gray-800 text-white">
@@ -56,36 +70,33 @@ export default function Contact() {
             <div className="mb-4">
               <label htmlFor="name" className="block mb-2">Nom</label>
               <input
+                ref={nameRef}
                 type="text"
                 id="name"
                 name="name"
                 className="w-full p-2 rounded bg-gray-700 text-white"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
             <div className="mb-4">
               <label htmlFor="email" className="block mb-2">Email</label>
               <input
+                ref={emailRef}
                 type="email"
                 id="email"
                 name="email"
                 className="w-full p-2 rounded bg-gray-700 text-white"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <div className="mb-4">
               <label htmlFor="message" className="block mb-2">Message</label>
               <textarea
+                ref={messageRef}
                 id="message"
                 name="message"
                 rows={4}
                 className="w-full p-2 rounded bg-gray-700 text-white"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
             </div>
@@ -95,6 +106,7 @@ export default function Contact() {
               type="submit"
               className={`bg-orange-300 hover:bg-orange-400 text-gray-900 font-bold px-6 py-2 rounded-full transition duration-300 mb-8 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
               disabled={loading}
+              aria-busy={loading}
             >
               {loading ? 'Envoi...' : 'Envoyer'}
             </button>

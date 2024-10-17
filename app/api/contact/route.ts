@@ -1,43 +1,91 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.NEXT_PUBLIC_EMAIL_USER,
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
+  },
+});
 
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
-    console.log('Received data:', { name, email, message });
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: process.env.EMAIL_SECURE === 'true',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-      },
+    const htmlMessage = `
+      <html>
+        <body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+          <table width="100%" cellspacing="0" cellpadding="0" style="background-color: #f8f8f8; padding: 20px;">
+            <tr>
+              <td>
+                <table width="600" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                  <tr>
+                    <td style="padding: 20px;">
+                      <h1 style="color: #333333;">New Contact Message</h1>
+                      <p>Name: <strong>${name}</strong></p>
+                      <p><strong>Email: <strong>${email}</strong></p>
+                      <p>Message: </p>
+                      <p>${message}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 20px; background-color: #f1f1f1; border-radius: 0 0 8px 8px;">
+                      <p style="text-align: center; color: #777777;">This message was sent from your contact form.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </body>
+      </html>
+    `;
+
+    await transporter.sendMail({
+      from: process.env.NEXT_PUBLIC_EMAIL_USER,
+      to: process.env.NEXT_PUBLIC_EMAIL_USER, // Envoyer à votre propre adresse pour recevoir le message
+      subject: `Message from ${name} `,
+      html: htmlMessage,
     });
 
-    const mailOptions = {
-      from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_RECEIVER,
-      subject: `Nouveau message de ${name}`,
-      text: message,
-      html: `
-        <h1>Nouveau message de ${name}</h1>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    };
+    console.log("Received contact message:", {
+      name,
+      
+      email,
+     
+      message,
+    });
 
-    await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully');
-    return NextResponse.json({ message: 'Email envoyé avec succès' }, { status: 200 });
+    return NextResponse.json(
+      { message: "Message received and email sent successfully" },
+      { status: 200 }
+    );
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ error: 'Erreur lors de l\'envoi de l\'email' }, { status: 500 });
+    console.error("Error handling contact form submission:", error);
+    return NextResponse.json(
+      { message: "Failed to process message" },
+      { status: 500 }
+    );
   }
 }
 
-export async function GET() {
-  return NextResponse.json({ message: 'Méthode non autorisée' }, { status: 405 });
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

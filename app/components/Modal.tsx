@@ -6,18 +6,18 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
-    const closeModal = () => onOpenChange(false); // Fonction pour fermer la modal
+    const closeModal = () => onOpenChange(false); 
 
     return (
         <div>
             {open && (
                 <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center">
-                    <div className="bg-gray-300 rounded-lg shadow-lg w-11/12 max-w-2xl p-8 relative"> {/* Changez la couleur de fond ici */}
+                    <div className="bg-gray-300 rounded-lg shadow-lg w-11/12 max-w-2xl p-8 relative"> 
                         <button 
                             onClick={closeModal} 
                             className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 transition duration-200"
                         >
-                            &times; {/* Croix pour fermer la modal */}
+                            &times; 
                         </button>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-gray-50 border border-gray-300 rounded-lg p-6 shadow-md">
@@ -35,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
                             className="mt-6 w-full bg-orange-300 hover:bg-orange-400 text-gray-900 font-bold px-6 py-2 rounded-full transition duration-300"
                         >
                             Fermer
-                        </button> {/* Style du bouton Fermer mis à jour */}
+                        </button> 
                     </div>
                 </div>
             )}

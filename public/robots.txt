@@ -1,0 +1,13 @@
+# Bloquer tous les robots de tous les répertoires sensibles
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /api/
+
+# Autoriser tous les robots à explorer le reste du site
+User-agent: *
+Allow: /
+
+# Spécifier l'emplacement du sitemap
+Sitemap: https://my-portfolio-lbs3-ai49bj7pg-virginies-projects-542ec830.vercel.app
