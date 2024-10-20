@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import data from '../../public/data.json';
+import data from '../../../public/data.json';
 
 interface Skill {
   name: string;

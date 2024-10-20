@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import data from '../../public/data.json';
+import data from '../../../public/data.json';
 
 
 export default function Header() {

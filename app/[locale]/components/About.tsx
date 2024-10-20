@@ -1,6 +1,6 @@
 "use client"
 
-import Modal from "../components/Modal";
+import Modal from "./Modal";
 import { useState } from "react"; 
 
 export default function About() {
