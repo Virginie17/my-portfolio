@@ -1,13 +1,13 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { unstable_setRequestLocale } from "next-intl/server";
-import '../globals.css';
+import "../globals.css";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: 'Votre Portfolio',
-  description: 'Portfolio de Virginie Chaffard',
+  title: "Votre Portfolio",
+  description: "Portfolio de Virginie Chaffard",
 };
 
 export function generateStaticParams() {
@@ -21,14 +21,23 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  unstable_setRequestLocale(locale);
+  if (!routing.locales.includes(locale as "fr" | "en")) {
+    notFound();
+  }
   const messages = await getMessages();
   return (
-      <html lang="fr">
-        <head>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        </head>
-        <body><NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider></body>
-      </html>
+    <html lang="fr">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+      </head>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
