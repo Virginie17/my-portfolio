@@ -7,11 +7,13 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import data from '../../public/data.json';
-
+import { useTranslations } from 'next-intl';
+import {LangSwitcher} from './LangSwitcher';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const  t  = useTranslations();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,10 +33,10 @@ export default function Header() {
     <header className={`fixed w-full z-10 transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <nav className="hidden md:flex space-x-6">
-          <Link href="#about" className="text-white hover:text-blue-400 transition-colors">À propos</Link>
-          <Link href="#skills" className="text-white hover:text-blue-400 transition-colors">Compétences</Link>
-          <Link href="#projects" className="text-white hover:text-blue-400 transition-colors">Projets</Link>
-          <Link href="#contact" className="text-white hover:text-blue-400 transition-colors">Contact</Link>
+          <Link href="#about" className="text-white hover:text-blue-400 transition-colors">{t('header.about')}</Link>
+          <Link href="#skills" className="text-white hover:text-blue-400 transition-colors">{t('header.skills')}</Link>
+          <Link href="#projects" className="text-white hover:text-blue-400 transition-colors">{t('header.projects')}</Link>
+          <Link href="#contact" className="text-white hover:text-blue-400 transition-colors">{t('header.contact')}</Link>
         </nav>
         
         <div className="flex items-center space-x-4">
@@ -54,10 +56,7 @@ export default function Header() {
               aria-label={data.email.alt} 
             />
           </a>
-          <select className="bg-transparent border-none text-white">
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
-          </select>
+          <LangSwitcher />
         </div>
         
         <button 
@@ -72,10 +71,10 @@ export default function Header() {
       
       {isMenuOpen && (
         <nav className="md:hidden bg-gray-800 p-4">
-          <Link href="#about" className="block py-2 text-white hover:text-blue-400 transition-colors">À propos</Link>
-          <Link href="#skills" className="block py-2 text-white hover:text-blue-400 transition-colors">Compétences</Link>
-          <Link href="#projects" className="block py-2 text-white hover:text-blue-400 transition-colors">Projets</Link>
-          <Link href="#contact" className="block py-2 text-white hover:text-blue-400 transition-colors">Contact</Link>
+          <Link href="#about" className="block py-2 text-white hover:text-blue-400 transition-colors">{t('header.about')}</Link>
+          <Link href="#skills" className="block py-2 text-white hover:text-blue-400 transition-colors">{t('header.skills')}</Link>
+          <Link href="#projects" className="block py-2 text-white hover:text-blue-400 transition-colors">{t('header.projects')}</Link>
+          <Link href="#contact" className="block py-2 text-white hover:text-blue-400 transition-colors">{t('header.contact')}</Link>
         </nav>
       )}
     </header>

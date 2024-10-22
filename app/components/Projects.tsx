@@ -9,9 +9,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import data from '../../public/data.json';
+import { useTranslations } from "next-intl";
 
 export default function Projects() {
   const [domLoaded, setDomLoaded] = useState(false);
+  const t = useTranslations();
 
   useEffect(() => {
     setDomLoaded(true);
@@ -20,7 +22,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">Mes Projets</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center text-white">{t('projects.title')}</h2>
         {domLoaded && (
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
@@ -48,7 +50,7 @@ export default function Projects() {
                     <p className="text-gray-300 mb-4 h-24 overflow-hidden">{project.texte}</p>
                     <div className="flex justify-between items-center">
                       <Link href={project.url} className="text-blue-400 hover:text-blue-300 transition-colors duration-300">
-                        Voir le projet
+                        {t('projects.viewProject')}
                       </Link>
                       <span className="text-sm text-gray-400">{project.category}</span>
                     </div>

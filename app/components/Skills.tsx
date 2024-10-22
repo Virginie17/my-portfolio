@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import data from '../../public/data.json';
+import { useTranslations } from "next-intl";
 
 interface Skill {
   name: string;
@@ -13,6 +14,7 @@ interface Skill {
 
 const Skills: React.FC = () => {
   const [skills, setSkills] = useState<Skill[]>([]);
+  const t = useTranslations();
 
   useEffect(() => {
     setSkills(data.skills);
@@ -34,14 +36,14 @@ const Skills: React.FC = () => {
 
   return (
     <article id="skills" className="flex flex-col items-center w-full py-10 bg-gray-800 text-white">
-      <h2 className="text-4xl font-bold mb-12 text-white">Skills</h2>
+      <h2 className="text-4xl font-bold mb-12 text-white">{t('skills.title')}</h2>
       <div className="relative flex flex-col items-center w-full gap-2.5 box-border md:flex-row md:justify-center md:gap-7.5 md:p-10">
         <section className="flex flex-col items-center rounded-lg m-3 p-5 w-4/5 bg-gray-700 border-2 border-gray-600 shadow-lg transition-all duration-200 ease-in-out md:w-[400px] md:h-[400px] md:p-0 md:pr-2.5 md:pb-10">
-          <h3 className="text-2xl font-bold mb-4 text-white p-2">{('Front')}</h3>
+          <h3 className="text-2xl font-bold mb-4 text-white p-2">{t('skills.front')}</h3>
           <SkillList skills={frontSkills} />
         </section>
         <section className="flex flex-col items-center rounded-lg m-3 p-5 w-4/5 bg-gray-700 border-2 border-gray-600 shadow-lg transition-all duration-200 ease-in-out md:w-[400px] md:h-[400px] md:p-0 md:pr-2.5 md:pb-10">
-          <h3 className="text-2xl font-bold mb-4 text-white p-2">{('Autres')}</h3>
+          <h3 className="text-2xl font-bold mb-4 text-white p-2">{t('skills.autres')}</h3>
           <SkillList skills={autresSkills} />
         </section>
       </div>

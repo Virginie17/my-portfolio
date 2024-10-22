@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from "next-intl";
 
 interface ModalProps {
   open: boolean;
@@ -7,6 +8,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
   const closeModal = () => onOpenChange(false);
+  const t = useTranslations();
 
   return (
     <div>
@@ -21,17 +23,17 @@ const Modal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
             </button>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-50 border border-gray-300 rounded-lg p-6 shadow-md">
-                <h3 className="font-semibold text-lg mb-2 text-blue-600">Expériences Professionnelles</h3>
+                <h3 className="font-semibold text-lg mb-2 text-blue-600">{t('modal.experiences')}</h3>
                 <ul className="list-disc list-inside text-gray-700">
-                  <li>Chargé de communication 2013 à 2021</li>
-                  <li>Assistante qualité et développement 2004 à 2013</li>
+                  <li>{t('modal.experience1')}</li>
+                  <li>{t('modal.experience2')}</li>
                 </ul>
               </div>
               <div className="bg-gray-50 border border-gray-300 rounded-lg p-6 shadow-md">
-                <h3 className="font-semibold text-lg mb-2 text-green-600">Formations</h3>
+                <h3 className="font-semibold text-lg mb-2 text-green-600">{t('modal.formations')}</h3>
                 <ul className="list-disc list-inside text-gray-700">
-                  <li>Intégrateur Web - OpenClassrooms - 2024</li>
-                  <li>BTS Communication Commerciale - 1999</li>
+                  <li>{t('modal.formation1')}</li>
+                  <li>{t('modal.formation2')}</li>
                 </ul>
               </div>
             </div>
@@ -39,7 +41,7 @@ const Modal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
               onClick={closeModal}
               className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-full transition duration-300"
             >
-              Fermer
+              {t('modal.close')}
             </button>
           </div>
         </div>

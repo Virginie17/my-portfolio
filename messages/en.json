@@ -1,0 +1,56 @@
+{
+  "skills": {
+    "title": "Skills",
+    "front": "Front",
+    "autres": "Others"
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewProject": "View Project"
+  },
+  "modal": {
+    "experiences": "Professional Experiences",
+    "experience1": "Communication Officer 2013 to 2021",
+    "experience2": "Quality and Development Assistant 2004 to 2013",
+    "formations": "Training",
+    "formation1": "Web Integrator - OpenClassrooms - 2024",
+    "formation2": "BTS Commercial Communication - 1999",
+    "close": "Close"
+  },
+  "hero": {
+    "title": "Virginie Chaffard",
+    "subtitle": "Front-End Developer",
+    "contact": "Contact"
+  },
+  "header": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "form": {
+    "fillAllFields": "Please fill in all fields before submitting.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "successMessage": "Thank you, your message has been sent!"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "successMessage": "Message sent successfully!",
+    "sending": "Sending...",
+    "send": "Send"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a Front-End Developer passionate about creating intuitive and aesthetic user interfaces. I enjoy working on projects that allow me to create high-performance and responsive web applications. What sets me apart is my ability to combine creativity and technical skills. I don't just code; I strive to understand the needs of my users to design experiences that are not only functional but also enjoyable to use. Each project is an opportunity for me to learn and innovate, and I am always looking for new ways to improve my skills and explore the latest trends in web development. In addition to my technical skills, I am a strong advocate for collaboration and communication within teams. I believe that the success of a project relies on a good understanding of each other's goals and synergy among team members. I am also passionate about accessibility and inclusivity in web development. I ensure that my creations are accessible to everyone, regardless of their abilities, because I firmly believe that the web should be an open and welcoming space for all. If you are looking for a developer who combines passion, technical expertise, and sensitivity to user needs, feel free to contact me. I would be delighted to discuss your projects and see how I can contribute to their success.",
+    "learnMore": "Learn More"
+  }
+}
