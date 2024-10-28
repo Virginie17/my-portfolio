@@ -3,7 +3,7 @@ import * as React from "react";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 
-type Language = "en" | "fr";
+type Language = "en" | "fr" | "zh";
 
 interface LanguageInfo {
   name: string;
@@ -12,6 +12,7 @@ interface LanguageInfo {
 const languages: Record<Language, LanguageInfo> = {
   en: { name: "English" },
   fr: { name: "Français" },
+  zh: { name: "中文" },
 };
 
 export const LangSwitcher: React.FC = () => {
@@ -30,7 +31,7 @@ export const LangSwitcher: React.FC = () => {
       onChange={(e) => handleLocaleChange(e.target.value as Language)}
     >
       {Object.entries(languages).map(([code, { name }]) => (
-        <option key={code} value={code}className="text-black">
+        <option key={code} value={code} className="text-black">
           {name}
         </option>
       ))}

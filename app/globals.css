@@ -7,6 +7,9 @@
   --background-start-rgb: 248, 244, 239;
   --background-end-rgb: 248, 244, 239;
   --accent-color: 0, 122, 255; 
+  --orange-color: 255, 127, 80; /* Couleur orange */
+  --orange-hover-color: 255, 69, 0; /* Couleur orange foncé */
+  --light-gray: 211, 211, 211; /* Gris clair */
 }
 
 @layer base {
@@ -65,7 +68,84 @@
       padding-right: 2rem;
     }
   }
+
+  .bg-primary {
+    background-color: rgb(var(--background-start-rgb));
+  }
+
+  .bg-secondary {
+    background-color: white;
+  }
+
+  .bg-light-gray {
+    background-color: rgb(var(--light-gray));
+  }
+
+  .bg-gray-800 {
+    background-color: #2d2d2d; /* Gris foncé */
+  }
+
+  .bg-gray-700 {
+    background-color: #3d3d3d; /* Gris moyen */
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  .text-orange-600 {
+    color: rgb(var(--orange-color));
+  }
+
+  .hover\:text-orange-800:hover {
+    color: rgb(var(--orange-hover-color));
+  }
+
+  .bg-orange-300 {
+    background-color: #ffb347; /* Couleur orange clair */
+  }
+
+  .hover\:bg-orange-400:hover {
+    background-color: #ff9a00; /* Couleur orange foncé */
+  }
+
+  .bg-orange-600 {
+    background-color: rgb(var(--orange-color));
+  }
+
+  .hover\:bg-orange-700:hover {
+    background-color: rgb(var(--orange-hover-color));
+  }
+
+  .text-gray-700 {
+    color: #4a4a4a;
+  }
+
+  .rounded-full {
+    border-radius: 9999px;
+  }
+
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .transition {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .duration-300 {
+    transition-duration: 300ms;
+  }
+
+  .scale-95 {
+    transform: scale(0.95);
+  }
+
+  .hover\:scale-100:hover {
+    transform: scale(1);
+  }
 }
+
 .swiper-button-next,
 .swiper-button-prev {
   color: #ffffff !important;

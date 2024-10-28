@@ -1,0 +1,142 @@
+{
+    "skills": {
+      "title": "技能",
+      "front": "前端",
+      "autres": "其他"
+    },
+    "projects": {
+      "title": "项目",
+      "viewProject": "查看项目",
+      "projectsList": [
+        {
+          "id": 1,
+          "name": "Oh my food",
+          "texte": "使用SASS动画改进移动网站界面。",
+          "title": "教育目标：",
+          "objectif1": "使用Git和Github进行版本控制",
+          "objectif2": "以移动优先的方式集成设计",
+          "objectif3": "实现CSS动画",
+          "image": "/assets/projets/ohmyfood.webp",
+          "alt": "Oh my food餐厅网站图片",
+          "url": "https://virginie17.github.io/projet-4-oh-my-food/",
+          "github": "https://github.com/Virginie17/projet-4-oh-my-food.git",
+          "category": "HTML | CSS | SASS"
+        },
+        {
+          "id": 2,
+          "name": "Sophie Bluel",
+          "texte": "使用JavaScript并与API通信，为室内设计师创建动态网页。",
+          "title": "教育目标：",
+          "objectif1": "使用JavaScript处理用户事件",
+          "objectif2": "使用JavaScript操作DOM元素",
+          "objectif3": "通过表单在JavaScript中获取用户数据",
+          "image": "/assets/projets/sophiebluel.webp",
+          "alt": "Sophie Bluel肖像图片",
+          "url": "https://virginie17.github.io/projet-6-sophie-bluel/",
+          "github": "https://github.com/Virginie17/projet-6-sophie-bluel.git",
+          "category": "HTML | CSS | JS"
+        },
+        {
+          "id": 3,
+          "name": "Kasa",
+          "texte": "使用React和React Router实现住宿应用程序的前端，创建现代和响应式的用户体验。",
+          "title": "教育目标：",
+          "objectif1": "使用Create React App初始化应用程序",
+          "objectif2": "使用React Router配置应用程序页面之间的导航",
+          "objectif3": "使用React组件开发网站界面元素",
+          "objectif4": "实现CSS动画",
+          "image": "/assets/projets/kasa.webp",
+          "alt": "Kasa住宿应用网站图片",
+          "url": "https://kasa-eight-sand.vercel.app/",
+          "github": "https://github.com/Virginie17/kasa.git",
+          "category": "HTML | CSS | REACT"
+        },
+        {
+          "id": 4,
+          "name": "Nina Carducci",
+          "texte": "通过改善性能和可访问性来优化摄影师网站的SEO。",
+          "title": "教育目标：",
+          "objectif1": "优化网站性能",
+          "image": "/assets/projets/ninacarducci.webp",
+          "alt": "Nina Carducci网站图片",
+          "url": "https://virginie17.github.io/nina-carducci/",
+          "github": "https://github.com/Virginie17/nina-carducci.git",
+          "category": "SEO | 性能优化"
+        },
+        {
+          "id": 5,
+          "name": "724 Event",
+          "texte": "这个项目让我调试和完成了一个单页活动网站的开发。",
+          "title": "教育目标：",
+          "objectif1": "使用Chrome DevTools调试网站",
+          "objectif2": "编写网站测试用例",
+          "objectif3": "理解不同类型的测试：功能测试、集成测试、单元测试",
+          "image": "/assets/projets/724.webp",
+          "alt": "724活动网站图片",
+          "url": "https://724events-henna.vercel.app/",
+          "github": "https://github.com/Virginie17/724events.git",
+          "category": "测试"
+        },
+        {
+          "id": 6,
+          "name": "ArgentBank",
+          "texte": "在这个项目中，我使用React和Redux开发银行应用程序的前端，创建动态和响应式的用户体验。我的主要任务是通过API调用将前端与后端集成。我还编写了REST API调用以连接应用程序的两个部分，确保客户端和服务器之间的流畅通信。",
+          "title": "教育目标：",
+          "objectif1": "配置客户端/服务器通信的API路由",
+          "objectif2": "使用Redux实现数据管理以确保前端功能",
+          "objectif3": "通过API调用在界面上显示后端数据",
+          "image": "/assets/projets/argentbank.webp",
+          "alt": "ArgentBank网站图片",
+          "url": "https://argentbank-rho.vercel.app/",
+          "github": "https://github.com/Virginie17/argentbank.git",
+          "category": "REACT REDUX | TYPESCRIPT"
+        }
+      ]
+    },
+    "modal": {
+      "experiences": "工作经验",
+      "experience1": "2013-2021 通信主管",
+      "experience2": "2004-2013 质量和发展助理",
+      "formations": "教育背景",
+      "formation1": "2024 - OpenClassrooms - Web开发集成",
+      "formation2": "1999 - 商业通信高级技术证书",
+      "close": "关闭"
+    },
+    "hero": {
+      "title": "Virginie Chaffard",
+      "subtitle": "前端开发工程师",
+      "contact": "联系方式"
+    },
+    "header": {
+      "about": "关于",
+      "skills": "技能",
+      "projects": "项目",
+      "contact": "联系"
+    },
+    "form": {
+      "fillAllFields": "发送前请填写所有字段。",
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "消息",
+      "send": "发送",
+      "successMessage": "谢谢，您的消息已成功发送！"
+    },
+    "footer": {
+      "allRightsReserved": "版权所有。"
+    },
+    "contact": {
+      "title": "联系我",
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "消息",
+      "successMessage": "消息发送成功！",
+      "sending": "发送中...",
+      "send": "发送"
+    },
+    "about": {
+      "title": "关于我",
+      "description": "我是一名热衷于创建直观和美观用户界面的前端开发工程师。我喜欢开发高性能和响应式的Web应用程序。我的独特之处在于能够将创造力与技术相结合。我不仅仅是编写代码，还致力于理解用户需求，设计既实用又令人愉悦的体验。每个项目对我来说都是学习和创新的机会，我一直在寻找提升技能和探索Web开发最新趋势的新方法。除了技术能力外，我也是团队协作和沟通的坚定支持者。我相信项目的成功建立在对每个人目标的良好理解和团队成员之间的协同作用上。我也热衷于Web开发中的可访问性和包容性。我确保我的作品对所有人都是可访问的，无论他们的能力如何，因为我坚信Web应该是一个对所有人开放和友好的空间。如果您正在寻找一位将热情、技术专长和用户需求敏感度结合在一起的开发人员，请随时与我联系。我很乐意讨论您的项目，看看我如何能为其成功做出贡献。",
+      "learnMore": "了解更多"
+    }
+  }
+  

@@ -5,8 +5,95 @@
     "autres": "Others"
   },
   "projects": {
-    "title": "My Projects",
-    "viewProject": "View Project"
+    "title": "Projects",
+    "viewProject": "View Project",
+    "projectsList": [
+      {
+        "id": 1,
+        "name": "Oh my food",
+        "texte": "Improvement of the interface of a mobile site with SASS animations.",
+        "title": "Educational Objectives:",
+        "objectif1": "Version your project with Git and Github",
+        "objectif2": "Integrate a mobile-first mockup",
+        "objectif3": "Implement CSS animations",
+        "image": "/assets/projets/ohmyfood.webp",
+        "alt": "image of the Oh my food website, a restaurant site",
+        "url": "https://virginie17.github.io/projet-4-oh-my-food/",
+        "github": "https://github.com/Virginie17/projet-4-oh-my-food.git",
+        "category": "HTML | CSS | SASS"
+      },
+      {
+        "id": 2,
+        "name": "Sophie Bluel",
+        "texte": "Creation of a dynamic web page for an interior designer's website using JavaScript and communicating with an API.",
+        "title": "Educational Objectives:",
+        "objectif1": "Manage user events with JavaScript",
+        "objectif2": "Manipulate DOM elements with JavaScript",
+        "objectif3": "Retrieve user data in JavaScript via forms",
+        "image": "/assets/projets/sophiebluel.webp",
+        "alt": "portrait image of Sophie Bluel",
+        "url": "https://virginie17.github.io/projet-6-sophie-bluel/",
+        "github": "https://github.com/Virginie17/projet-6-sophie-bluel.git",
+        "category": "HTML | CSS | JS"
+      },
+      {
+        "id": 3,
+        "name": "Kasa",
+        "texte": "Implementation of the front-end of a housing application using React and React Router to create a modern and responsive user experience.",
+        "title": "Educational Objectives:",
+        "objectif1": "Initialize an application with Create React App",
+        "objectif2": "Configure navigation between application pages with React Router",
+        "objectif3": "Develop web interface elements using React components",
+        "objectif4": "Implement CSS animations",
+        "image": "/assets/projets/kasa.webp",
+        "width": "500",
+        "height": "300",
+        "alt": "image of the Kasa website, a housing application",
+        "url": "https://kasa-eight-sand.vercel.app/",
+        "github": "https://github.com/Virginie17/kasa.git",
+        "category": "HTML | CSS | REACT"
+      },
+      {
+        "id": 4,
+        "name": "Nina Carducci",
+        "texte": "Optimization of a photographer's website SEO, improving its performance and accessibility.",
+        "title": "Educational Objectives:",
+        "objectif1": "Optimize the performance of a website",
+        "image": "/assets/projets/ninacarducci.webp",
+        "alt": "image of the Nina Carducci website",
+        "url": "https://virginie17.github.io/nina-carducci/",
+        "github": "https://github.com/Virginie17/nina-carducci.git",
+        "category": "SEO | Performance"
+      },
+      {
+        "id": 5,
+        "name": "724 Event",
+        "texte": "This project allowed me to debug and finalize the development of a one-page event site.",
+        "title": "Educational Objectives:",
+        "objectif1": "Debug a website using Chrome DevTools",
+        "objectif2": "Write a test plan to test a site",
+        "objectif3": "Understand different tests: functional tests, integration tests, unit tests",
+        "image": "/assets/projets/724.webp",
+        "alt": "image of the 724 event site, an event site",
+        "url": "https://724events-henna.vercel.app/",
+        "github": "https://github.com/Virginie17/724events.git",
+        "category": "Tests"
+      },
+      {
+        "id": 6,
+        "name": "ArgentBank",
+        "texte": "In this project, I worked on the front-end development of a banking application using React and Redux to create a dynamic and responsive user experience. My main task was to integrate the front-end with the back-end via API calls. I also wrote REST API calls to connect the two parts of the application, ensuring smooth communication between the client and the server.",
+        "title": "Educational Objectives:",
+        "objectif1": "Configure API routes for client/server communication",
+        "objectif2": "Implement data management with Redux to ensure front-end functionality",
+        "objectif3": "Display back-end data on the interface via API calls",
+        "image": "/assets/projets/argentbank.webp",
+        "alt": "image of the ArgentBank website",
+        "url": "https://argentbank-rho.vercel.app/",
+        "github": "https://github.com/Virginie17/argentbank.git",
+        "category": "REACT REDUX | TYPESCRIPT"
+      }
+    ]
   },
   "modal": {
     "experiences": "Professional Experiences",

@@ -6,7 +6,7 @@ import "../globals.css";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Votre Portfolio",
+  title: "My Portfolio",
   description: "Portfolio de Virginie Chaffard",
 };
 

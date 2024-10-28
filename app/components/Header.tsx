@@ -8,12 +8,12 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import data from '../../public/data.json';
 import { useTranslations } from 'next-intl';
-import {LangSwitcher} from './LangSwitcher';
+import { LangSwitcher } from './LangSwitcher';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const  t  = useTranslations();
+  const t = useTranslations();
 
   useEffect(() => {
     const handleScroll = () => {

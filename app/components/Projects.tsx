@@ -8,8 +8,8 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import data from '../../public/data.json';
 import { useTranslations } from "next-intl";
+
 
 export default function Projects() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -41,10 +41,18 @@ export default function Projects() {
             }}
             className="mySwiper"
           >
-            {data.projects.map((project) => (
+            {t.raw('projects.projectsList').map((project: {
+              id: string
+              image: string
+              alt: string
+              name: string
+              texte: string
+              url: string
+              category: string
+            }) => (
               <SwiperSlide key={project.id}>
                 <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-                  <Image src={project.image} alt={project.name} width={400} height={300} className="w-full h-48 object-cover" />
+                  <Image src={project.image} alt={project.alt} width={400} height={300} className="w-full h-48 object-cover" />
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2 text-white">{project.name}</h3>
                     <p className="text-gray-300 mb-4 h-24 overflow-hidden">{project.texte}</p>
